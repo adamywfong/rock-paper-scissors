@@ -22,13 +22,10 @@ function pick() {
     var playerRPS = prompt("Please enter Rock, Paper, or Scissors");
     while (playerRPS  != 'R' && playerRPS != 'P' && playerRPS !='S'){
         if (playerRPS .toUpperCase() == 'R' || playerRPS .toUpperCase() == 'ROCK') {
-            console.log("You picked Rock");
             return 0;
         } else if (playerRPS .toUpperCase() == 'P' || playerRPS .toUpperCase() == 'PAPER') {
-            console.log("You picked Paper");
             return 1;
         } else if (playerRPS .toUpperCase() == 'S' || playerRPS .toUpperCase() == 'SCISSORS') {
-            console.log("You picked Scissors");
             return 2;
         } else {
             playerRPS  = prompt("That wasn't an option! Try again. Please enter Rock, Paper, or Scissors");
@@ -38,7 +35,7 @@ function pick() {
 
 function play() {
     var playing = true;
-    while (playing){
+    while (playing) {
         playRPS(pick());
         playing = confirm("Do you want to play again?");
     }
