@@ -15,7 +15,6 @@ function playRPS(choice) {
     var botRPS = Math.floor(3*Math.random());
     wld[rpsMatrix[choice][botRPS]]++;
     alert("You pick " + rps[choice] + ".\n" + "Your opponent picks " + rps[botRPS] +".\n" + result[rpsMatrix[choice][botRPS]]+"\nWins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
-    console.log("Wins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
 }
 
 function pick() {
