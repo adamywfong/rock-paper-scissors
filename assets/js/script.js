@@ -36,7 +36,7 @@ function play() {
     var playing = true;
     while (playing) {
         playRPS(pick());
-        playing = confirm("Do you want to play again?");
+        playing = confirm("Do you want to play again?" + "\nWins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
     }
 }
 
