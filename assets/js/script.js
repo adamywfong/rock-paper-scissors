@@ -13,30 +13,30 @@ var rpsMatrix = [
 
 function playRPS(choice) {
     var botRPS = Math.floor(3*Math.random());
-    wld[rpsMatrix[choice][botRPS]]++;
+    wld[rpsMatrix[choice][botRPS]]++; //increments wld for game result
     alert("You pick " + rps[choice] + ".\n" + "Your opponent picks " + rps[botRPS] +".\n" + result[rpsMatrix[choice][botRPS]]+"\nWins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
 }
 
 function pick() {
     var playerRPS = prompt("Please enter Rock, Paper, or Scissors");
-    while (playerRPS  != 'R' && playerRPS != 'P' && playerRPS !='S'){
-        if (playerRPS .toUpperCase() == 'R' || playerRPS .toUpperCase() == 'ROCK') {
-            return 0;
-        } else if (playerRPS .toUpperCase() == 'P' || playerRPS .toUpperCase() == 'PAPER') {
-            return 1;
-        } else if (playerRPS .toUpperCase() == 'S' || playerRPS .toUpperCase() == 'SCISSORS') {
-            return 2;
-        } else {
-            playerRPS  = prompt("That wasn't an option! Try again. Please enter Rock, Paper, or Scissors");
-        }
+    if (playerRPS.toUpperCase() == 'R' || playerRPS.toUpperCase() == 'ROCK') {
+        return 0;
+    } else if (playerRPS.toUpperCase() == 'P' || playerRPS.toUpperCase() == 'PAPER') {
+        return 1;
+    } else if (playerRPS.toUpperCase() == 'S' || playerRPS.toUpperCase() == 'SCISSORS') {
+        return 2;
+    } else {
+        alert("That wasn't an option! Try again.");
+        pick();
     }
 }
 
+
 function play() {
-    var playing = true;
-    while (playing) {
+    var isPlaying = true;
+    while (isPlaying) {
         playRPS(pick());
-        playing = confirm("Do you want to play again?" + "\nWins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
+        isPlaying = confirm("Do you want to play again?" + "\nWins: " + wld[0] + " Losses: " + wld[1] + " Draws: " + wld[2]);
     }
 }
 
