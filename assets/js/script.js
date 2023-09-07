@@ -19,15 +19,16 @@ function playRPS(choice) {
 
 function pick() {
     var playerRPS = prompt("Please enter Rock, Paper, or Scissors");
-    if (playerRPS.toUpperCase() == 'R' || playerRPS.toUpperCase() == 'ROCK') {
-        return 0;
-    } else if (playerRPS.toUpperCase() == 'P' || playerRPS.toUpperCase() == 'PAPER') {
-        return 1;
-    } else if (playerRPS.toUpperCase() == 'S' || playerRPS.toUpperCase() == 'SCISSORS') {
-        return 2;
-    } else {
-        alert("That wasn't an option! Try again.");
-        pick();
+    while (true) {
+        if (playerRPS.toUpperCase() == 'R' || playerRPS.toUpperCase() == 'ROCK') {
+            return 0;
+        } else if (playerRPS.toUpperCase() == 'P' || playerRPS.toUpperCase() == 'PAPER') {
+            return 1;
+        } else if (playerRPS.toUpperCase() == 'S' || playerRPS.toUpperCase() == 'SCISSORS') {
+            return 2;
+        } else {
+            playerRPS = prompt("That wasn't an option! Try again. Please enter Rock, Paper, or Scissors");
+        }
     }
 }
 
